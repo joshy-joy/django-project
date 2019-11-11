@@ -1,0 +1,82 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Joshy Joy</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" >
+    
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="album.css" rel="stylesheet">
+  </head>
+  <body>
+
+<main role="main">
+
+  <section class="jumbotron text-center">
+    <div class="container">
+        <img src="{% static 'rename.jpg' %}" height="300" ></img>
+      <h1 class="jumbotron-heading">Joshy Joy</h1>
+      <p class="lead text-muted">I am an undergraduate in Computer Science and Engineering from Kerala Technological university. I am a highly motivated Student with a goal-driven work ethic. I have a strong curiosity for Artificial Intelligence, Data Science and am well versed in Full-stack software development. I have an ample amount of experience in the data science world working with real-world data and produce results. I have data science professional certification form IBM and STED, Deep Learning professional certification from Coursera and experience in Jupyter Notebook, R Studio and IBM DB2. I hope I become a valued data scientist in this fantastic new field.</p>
+      <p>
+        <a href="emailto:joshyjoy999@gmail.com" class="btn btn-primary my-2">Email Me</a>
+      </p>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+      
+       {% for job in jobs %}
+      
+        <div class="col-md-4">
+          <a href="{% url 'detail' job.id %}">
+          <div class="card mb-4 shadow-sm">
+            <img class="card-img-top" src = "{{ job.image.url }}" >
+            <div class="card-body">
+            <p class="card-text">{{ job.summary }}</p>
+            </div>
+          </div>
+         </a>
+        </div>
+
+      {% endfor %}
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script src="{% static 'jquery-3.4.1.min' %}" ></script>
+</body>
+<script src="{% static 'jquery-3.4.1.min' %}" ></script>
+<script src="{% static 'popper.min.js' %}" ></script>
+<script src="{% static 'js/bootstrap.min.js' %}" ></script>
+</html>

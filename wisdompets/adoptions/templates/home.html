@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<div>
+    {% for pet in Pets %}
+    <div class="petname">
+        <a href = "{% url 'pet_details' pet.id %}">
+            <h33>{{pet.name | capfirst }}</h3>
+        </a>
+        <p> Species : {{ pet.species }}</p>
+        {% if pet.breed %}
+            <p>Breed : {{ pet.breed }}</p>
+        {% endif %}
+        <p class="hidden">{{ pet.description }}</p>
+        <br>
+    <div>
+    {% endfor %}
+</div>
+{% endblock %}
