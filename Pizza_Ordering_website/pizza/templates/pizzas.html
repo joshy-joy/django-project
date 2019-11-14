@@ -1,0 +1,13 @@
+<h1> Order Your delicious Pizzas</h1>
+
+<form action="{% url 'pizzas' %}" method="POST">
+    {% csrf_token %}
+
+    {{ formset.mangement_form }}
+
+    {% for form in formset %}
+        {{ form }}
+        <br><br>
+    {% endfor %}
+    <input type="submit" value="Order Pizza">
+</form>

@@ -1,0 +1,10 @@
+<h1>Edit your Pizza</h1>
+
+<h2>{{ note }}</h2>
+
+<form method="POST" action="{% url 'edit_order' pizza.id %}">
+        {% csrf_token %}
+        {{ pizzaform }}
+        <input type="submit" value="Edit Pizza">
+</form>
+
