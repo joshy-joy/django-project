@@ -1,13 +1,21 @@
-<h1> Order Your delicious Pizzas</h1>
+{% extends 'base.html' %}
+{% block 'body' %}
 
-<form action="{% url 'pizzas' %}" method="POST">
-    {% csrf_token %}
+<div class="container">
 
-    {{ formset.mangement_form }}
+    <h1> Order Your delicious Pizzas</h1>
 
-    {% for form in formset %}
-        {{ form }}
-        <br><br>
-    {% endfor %}
-    <input type="submit" value="Order Pizza">
-</form>
+    <form action="{% url 'pizzas' %}" method="POST">
+        {% csrf_token %}
+
+        {{ formset.mangement_form }}
+
+        {% for form in formset %}
+            {{ form }}
+            <br><br>
+        {% endfor %}
+        <input type="submit" value="Order Pizza">
+    </form>
+
+</div>
+{% endblock %}

@@ -1,3 +1,41 @@
-<h1>Nandia's Garden</h1>
+{% extends 'base.html' %}
+{% block 'body' %}
+<div class="text-center">
+    {% load static %}
+    <img src="{% static 'nandiasgarden.jpg' %}" class="img-fluid" alt="Nandias Garden">
 
-<h4><a href="{% url 'order' %}">Order a Pizza</a></h4>
+</div>
+
+<div class="album py-5 bg-light">
+        <div class="container">
+    
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <img src="{% static 'chicago.jpg' %}" class="img-fluid" alt="chicago" height="10">
+                <div class="card-body">
+                  <p class="card-text text-center">Chicago Pizza</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <img src="{% static 'california.jpg' %}" class="img-fluid" alt="california" height="50">
+                <div class="card-body">
+                  <p class="card-text text-center">Chicago Pizza</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <img src="{% static 'detroit.jpg' %}" class="img-fluid" alt="detroit" height="50">
+                <div class="card-body">
+                  <p class="card-text">Detroit Pizza</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+{% endblock %}
